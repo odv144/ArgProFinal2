@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 
 
-const TodoInput = ({addTodo,onHabilitarBusqueda,inputValue}) => {
+const TodoInput = ({addTodo,onHabilitarBusqueda}) => {
   
   const [tarea,setTarea]=useState('');
 
@@ -26,7 +26,11 @@ const TodoInput = ({addTodo,onHabilitarBusqueda,inputValue}) => {
       // console.log(tarea);
     }
   }
+
+  /****************************************************************/
+    //Esta funcion creo que deberia ir por el icono de  BUSQUEDA.
   const addTaskClick=(e)=>{
+    e.preventDefault()
       if(tarea==''){
         console.log("El campo task no puede estar vacio");
         return 
@@ -35,6 +39,9 @@ const TodoInput = ({addTodo,onHabilitarBusqueda,inputValue}) => {
       setTarea('');
      
   }
+  /****************************************************************/
+
+
   const handlehabilitarBusqueda=(e)=>{
     onHabilitarBusqueda(e.target.value);
   }
@@ -63,6 +70,7 @@ const TodoInput = ({addTodo,onHabilitarBusqueda,inputValue}) => {
           onBlur={handlehabilitarBusqueda}
           value={tarea}
           onKeyDown={addTask}
+          
           bg={bg}
           color={color}
           _focus={{
@@ -75,13 +83,13 @@ const TodoInput = ({addTodo,onHabilitarBusqueda,inputValue}) => {
         h="50px" 
         bg={bg}
         borderRadius="0px">
-          <Flex alignItems="center" 
+          <Flex align="center" 
           bg={bg}>
             <FaCirclePlus 
               color="#4299E1"
               onClick={addTaskClick}
               size="22px"
-              alignSelf="center"
+              align="center"
               cursor="pointer"
             />
             <Text

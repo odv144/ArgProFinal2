@@ -19,16 +19,18 @@ const FiltersContainer = ({children})=>{
     return(
         <Flex 
         bg={bg}
-        mt="10px"
+        mt="-1px"
         color="grey"
         justifyContent="space-around"
-        borderTop="1px solid #e2e8f0"
-        paddingTop="10px">
+        border="0px solid #e2e8f0"
+        paddingTop="10px"
+        
+        >
             {children}
         </Flex>
     )
 }
-const FilterButton=({action,filter,icon})=>{
+const FilterButton=({action,filter,icon, getFilter})=>{
 
     const { colorMode, toggleColorMode } = useColorMode();
     const theme = useTheme();
@@ -41,16 +43,15 @@ const FilterButton=({action,filter,icon})=>{
     
     return(
         <Box 
-        mb="10px"
+        mb="10px" 
         textAlign="center" 
         display="flex" 
         flexDirection="column" 
         alignItems="center"
-        >
-            
-        {icon==1 && <IoCheckmarkDoneSharp size="30px" mb="2px" strokeWidth={5} color={color}/>}
-        {icon==2 && <IoMdCheckmarkCircle size="30px" mb="2px" strokeWidth={2} color={color}/>}
-        {icon==3 &&  <PiCircleLight size="30px" mb="2px" strokeWidth={5} color={color}/>}
+        onClick={() => getFilter(filter)}>
+        {icon==1 && <IoCheckmarkDoneSharp size="30px" mb="2px" strokeWidth={5} />}
+        {icon==2 && <IoMdCheckmarkCircle size="30px" mb="2px" strokeWidth={2}/>}
+        {icon==3 &&  <PiCircleLight size="30px" mb="2px" strokeWidth={5} />}
 
         <Text>{filter}</Text>
       </Box>
