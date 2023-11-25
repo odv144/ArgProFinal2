@@ -39,7 +39,7 @@ function App() {
     const todoList = [...todos];
     todoList.push(newTask);
     setTodos(todoList);
-    setAuxList(todoList) //Lista Auxiliar
+    setAuxList(todoList) 
   };
 
   const handleSetComplete = (id) => {
