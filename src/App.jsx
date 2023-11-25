@@ -82,7 +82,7 @@ function App() {
       setTodos(buscarList);
     }
   };
- 
+
   const getFilter = (filtro) => {
     setFilter(filtro);
   }

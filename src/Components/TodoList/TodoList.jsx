@@ -1,7 +1,8 @@
-import { Box, Flex, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
+import { Box, Flex, Input, InputGroup, InputRightElement, useColorMode } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { DeleteIcon } from '@chakra-ui/icons';
 import Todo from '../Todo/Todo';
+import { theme } from '../../assets/Theme/Theme';
 
 
 const TodoList = ({ todos, handleSetComplete, handleDelTask, filter, setTodos, lista, setAuxList }) => {
